@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ConversionsScreen extends StatefulWidget {
-   const ConversionsScreen({Key? key}) : super(key: key);
+  const ConversionsScreen({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _Conversions();
@@ -15,9 +15,7 @@ class _Conversions extends State<ConversionsScreen> {
   final myController = TextEditingController();
 
   double kilometrosAHectometros() {
-
     var numeroString = double.parse(myController.text);
-    
 
     double resultado = numeroString * 10;
 
@@ -25,20 +23,15 @@ class _Conversions extends State<ConversionsScreen> {
   }
 
   double kilometrosADecametros() {
-
     var numeroString = double.parse(myController.text);
-    
 
     double resultado = numeroString * 100;
-
 
     return resultado;
   }
 
   double kilometrosAMetros() {
-
     var numeroString = int.parse(myController.text);
-    
 
     double resultado = numeroString * 1000;
 
@@ -46,9 +39,7 @@ class _Conversions extends State<ConversionsScreen> {
   }
 
   double kilometrosADecimetros() {
-
     var numeroString = int.parse(myController.text);
-    
 
     double resultado = numeroString * 10000;
 
@@ -56,9 +47,7 @@ class _Conversions extends State<ConversionsScreen> {
   }
 
   double kilometrosACentimetros() {
-
     var numeroString = int.parse(myController.text);
-    
 
     double resultado = numeroString * 100000;
 
@@ -67,7 +56,6 @@ class _Conversions extends State<ConversionsScreen> {
 
   double kilometrosAMilimetros() {
     var numeroString = int.parse(myController.text);
-    
 
     double resultado = numeroString * 1000000;
 
@@ -230,27 +218,27 @@ class _Conversions extends State<ConversionsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title:  const Text('Conversiones'),
+          title: const Text('Conversiones'),
           elevation: 10,
           centerTitle: true,
-          backgroundColor:  const Color.fromARGB(255, 182, 21, 197)),
+          backgroundColor: const Color.fromARGB(255, 182, 21, 197)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding:  const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(16.0),
               child: TextField(
                 obscureText: false,
                 controller: myController,
-                decoration:  const InputDecoration(
+                decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Ingrese la medida',
                 ),
               ),
             ),
             Padding(
-              padding:  const EdgeInsets.all(25.0),
+              padding: const EdgeInsets.all(25.0),
               child: ExpansionPanelList(
                 expansionCallback: (panelIndex, isExpanded) {
                   active = !active;
@@ -265,7 +253,7 @@ class _Conversions extends State<ConversionsScreen> {
                 children: <ExpansionPanel>[
                   ExpansionPanel(
                     headerBuilder: (context, isOpen) {
-                      return  const Text(
+                      return const Text(
                         'Seleccione una conversion',
                         style: TextStyle(
                             color: Colors.black87,
@@ -283,37 +271,38 @@ class _Conversions extends State<ConversionsScreen> {
                                   context: context,
                                   builder: (context) {
                                     return AlertDialog(
-                                      content: Text('Resultado: ${kilometrosAHectometros()}'),
+                                      content: Text(
+                                          'Resultado: ${kilometrosAHectometros()}'),
                                     );
                                   });
                             },
-                            child:  const Text(
+                            child: const Text(
                               'Km a Hm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         ElevatedButton(
-                            onPressed: (){
-
+                        ElevatedButton(
+                            onPressed: () {
                               showDialog(
                                   context: context,
                                   builder: (context) {
                                     return AlertDialog(
-                                      content: Text('Resultado: ${kilometrosADecametros()}'),
+                                      content: Text(
+                                          'Resultado: ${kilometrosADecametros()}'),
                                     );
                                   });
                             },
-                            child:  const Text(
+                            child: const Text(
                               'Km a Dam',
                               style: TextStyle(color: Colors.black),
                             )),
-                         ElevatedButton(
-                            onPressed: (){
-
+                        ElevatedButton(
+                            onPressed: () {
                               showDialog(
                                   context: context,
                                   builder: (context) {
                                     return AlertDialog(
-                                      content: Text('Resultado: ${kilometrosAMetros()}'),
+                                      content: Text(
+                                          'Resultado: ${kilometrosAMetros()}'),
                                     );
                                   });
                             },
@@ -321,13 +310,14 @@ class _Conversions extends State<ConversionsScreen> {
                               'Km a M',
                               style: TextStyle(color: Colors.black),
                             )),
-                          ElevatedButton(
-                            onPressed: (){
+                        ElevatedButton(
+                            onPressed: () {
                               showDialog(
                                   context: context,
                                   builder: (context) {
                                     return AlertDialog(
-                                      content: Text('Resultado: ${kilometrosADecimetros()}'),
+                                      content: Text(
+                                          'Resultado: ${kilometrosADecimetros()}'),
                                     );
                                   });
                             },
@@ -335,13 +325,14 @@ class _Conversions extends State<ConversionsScreen> {
                               'Km a Dm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         ElevatedButton(
-                            onPressed: (){
+                        ElevatedButton(
+                            onPressed: () {
                               showDialog(
                                   context: context,
                                   builder: (context) {
                                     return AlertDialog(
-                                      content: Text('Resultado: ${kilometrosACentimetros()}'),
+                                      content: Text(
+                                          'Resultado: ${kilometrosACentimetros()}'),
                                     );
                                   });
                             },
@@ -349,14 +340,14 @@ class _Conversions extends State<ConversionsScreen> {
                               'Km a Cm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         ElevatedButton(
-                            onPressed: (){
-
+                        ElevatedButton(
+                            onPressed: () {
                               showDialog(
                                   context: context,
                                   builder: (context) {
                                     return AlertDialog(
-                                      content: Text('Resultado: ${kilometrosAMilimetros()}'),
+                                      content: Text(
+                                          'Resultado: ${kilometrosAMilimetros()}'),
                                     );
                                   });
                             },
@@ -364,217 +355,217 @@ class _Conversions extends State<ConversionsScreen> {
                               'Km a Mm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Hm a Km',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Hm a Dam',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Hm a M',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Hm a Dm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Hm a Cm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Hm a Mm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dam a Km',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dam a Hm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dam a M',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dam a Dm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dam a Cm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dam a Mm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'M a Km',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'M a Hm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'M a Dam',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'M a Dm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'M a Cm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'M a Mm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a Km',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a Hm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a Dam',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a M',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a Cm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a Mm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Cm a Km',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Cm a Hm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Cm a Dam',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Cm a M',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Cm a Dm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Cm a Mm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Dm a Km',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Km a Hm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Mm a Dam',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Mm a M',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Mm a Dm',
                               style: TextStyle(color: Colors.black),
                             )),
-                         const ElevatedButton(
+                        const ElevatedButton(
                             onPressed: null,
                             child: Text(
                               'Mm a Cm',
